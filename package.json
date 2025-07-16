@@ -1,21 +1,31 @@
 {
   "name": "contact-manager-backend",
   "version": "1.0.0",
+  "description": "Contact Management System backend using Node.js, Express and MongoDB.",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-  "start": "node app.js",
-  "dev": "nodemon app.js"
-}
-,
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node scripts/seed.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "backend",
+    "REST API",
+    "contact-manager"
+  ],
+  "author": "Bharat (IIT Patna)",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^17.2.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
     "nodemon": "^3.1.10"
   }
 }
