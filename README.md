@@ -10,11 +10,11 @@ Node.js/Express backend for contact management. Features REST API, MongoDB stora
 
 ## 📁 Project Structure 
 contact-manager-backend/
--⚫️app.js # Main entry
--⚫️models/Contact.js # Data schema
--⚫️scripts/seed.js # DB seeding
--⚫️env.example # Env template
--🔵(Routes/controllers coming)
+⚫️app.js # Main entry
+⚫️models/Contact.js # Data schema
+⚫️scripts/seed.js # DB seeding
+⚫️env.example # Env template
+🔵(Routes/controllers coming)
 
 
 ## Setup  
