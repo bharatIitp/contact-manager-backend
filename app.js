@@ -2,6 +2,9 @@ import dotenv from 'dotenv';
 import express from 'express';
 import connectDB from './config/db.js';
 import contactRoutes from './routes/contactRoutes.js';
+import { notFound } from './middleware/notFound.js';
+import { errorHandler } from './middleware/errorHandler.js';
+
 
 dotenv.config();
 
@@ -18,6 +21,14 @@ app.use('/api/contacts', contactRoutes);
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
+
+
+
+// Error handling middleware
+app.use(notFound);
+app.use(errorHandler);
+
+
 
 // Start server only after DB connection
 connectDB()
