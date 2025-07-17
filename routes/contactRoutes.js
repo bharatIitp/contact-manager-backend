@@ -8,13 +8,15 @@ import {
     deleteContact
 } from '../controllers/contactController.js';
 
+import { validateContact }  from '../middleware/validateContact.js';
+
 import { Router } from 'express';
 
 const router = Router();
 
 router.get('/' , getAllContacts);
 router.get('/:id' , getContactById);
-router.post('/', createContact);
+router.post('/', validateContact, createContact);
 router.put('/:id' , updateContact);
 router.delete('/:id', deleteContact);
 
