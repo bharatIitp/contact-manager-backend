@@ -4,27 +4,31 @@ const contactSchema  = new Schema({
 
     name: {
         type: String,
-        required: true,
+        required: [true, 'Name is required'],
         trim: true,
-        minLength: 3,
+        minLength: [2, 'Name must be at least 2 characters'],
     },
     email: {
         type: String,
-        required: true,
+        required: [true, 'Email is required'],
         unique: true,
-        match:  /.+\@.+\..+/,
+        match:  [/\S+@\S+\.\S+/, 'Invalid email format'],
         lowercase: true,
     },
     phone: {
       type: String,
-      required: true,
-      unique: true
+      required: [true, 'Phone number is required'],
+      unique: true,
+      match: [/^\+?[1-9]\d{1,14}$/, 'Invalid phone number']
     },
     label: {
       type: String,
-      enum: ['Friend', 'Family', 'Work', 'Other'],
-      default: 'Other'
-    },
+      enum: {
+      values: ['Friend', 'Work', 'Family'],
+      message: 'Label must be Friend, Work, or Family'
+    }
+  },
+
     address: {
       city: String,
       state: String,
