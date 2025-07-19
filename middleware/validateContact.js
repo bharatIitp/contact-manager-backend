@@ -2,7 +2,7 @@ import { body , validationResult} from 'express-validator';
 
 export const validateContact = [
     body('name')
-    .isEmpty().withMessage('Name is required')
+    .notEmpty().withMessage('Name is required')
     .isLength({min: 2}).withMessage('Name must be at least 2 characters long'),
 
 
@@ -10,7 +10,7 @@ export const validateContact = [
     .isEmail().withMessage('Invalid email formate'),
 
     body('phone')
-    .isEmpty().withMessage('Phone number is required')
+    .notEmpty().withMessage('Phone number is required')
     .isMobilePhone().withMessage('Invalid phone number'),
 
 

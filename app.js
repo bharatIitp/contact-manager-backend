@@ -4,6 +4,8 @@ import connectDB from './config/db.js';
 import contactRoutes from './routes/contactRoutes.js';
 import { notFound } from './middleware/notFound.js';
 import { errorHandler } from './middleware/errorHandler.js';
+import authRoutes from "./routes/auth.routes.js";
+
 
 
 dotenv.config();
@@ -16,6 +18,8 @@ app.use(express.json());
 
 //Routes
 app.use('/api/contacts', contactRoutes);
+app.use("/api/auth", authRoutes);
+
 
 //Health Check Route
 app.get('/health', (req, res) => {
