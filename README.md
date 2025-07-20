@@ -46,10 +46,10 @@ A Node.js + Express RESTful API for managing personal contacts with secure user 
     Create a `.env` file in the root directory and add the following variables. Use `.env.example` as a template.
 
     ```env
-    PORT=5000
-    MONGO_URI=your_mongodb_atlas_connection_uri
-    JWT_SECRET=your_super_secret_jwt_key
-    NODE_ENV=development
+    PORT=...
+    MONGO_URI=.....
+    JWT_SECRET=....
+    NODE_ENV=...
     ```
 
 4.  **Run the server**
@@ -66,8 +66,9 @@ A Node.js + Express RESTful API for managing personal contacts with secure user 
 - B.sc CS @ IIT Patna
 - Backend Developer Intern
 
+## 🏁 Future Enhancements
 
-## Future Enhancements
+- [ ] CSV export of contacts
 - [ ] Docker support for containerization
 - [ ] Swagger/OpenAPI for interactive API documentation
 - [ ] Cloud deployment scripts (e.g., for Render/EC2)
