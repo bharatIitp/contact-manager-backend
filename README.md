@@ -1,41 +1,79 @@
-# Contact Manager Backend  
-Node.js/Express backend for contact management. Features REST API, MongoDB storage, and data seeding.  
+# Contact Manager Backend API
 
-## Tech Stack  
-- **Runtime**: Node.js  
-- **Framework**: Express.js  
-- **Database**: MongoDB Atlas  
-- **ODM**: Mongoose (data modeling)  
-- **Env**: Dotenv (configuration)  
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-blue.svg)
+![Express.js](https://img.shields.io/badge/Express.js-5.x-orange.svg)
 
-## 📁 Project Structure 
-contact-manager-backend/
-⚫️app.js # Main entry
-⚫️models/Contact.js # Data schema
-⚫️scripts/seed.js # DB seeding
-⚫️env.example # Env template
-🔵(Routes/controllers coming)
+A Node.js + Express RESTful API for managing personal contacts with secure user authentication. Built as part of an internship project with production-quality architecture, validations, and user access control.
 
+## Features
 
-## Setup  
-1. Clone repo:  
-   ```bash
-   git clone clone https://github.com/YourUsername/contact-manager-backend.git 
-   cd contact-manager-backend```
+- **JWT-based User Authentication**: Secure Register/Login endpoints.
+- **CRUD Operations for Contacts**: Full control over contact management.
+- **Input Validation**: Using `express-validator` for robust data validation.
+- **Auth Middleware**: Protects private routes from unauthorized access.
+- **Search**: Find contacts by name or email.
+- **Pagination**: Scalable listing for large datasets.
+- **Centralized Error Handling**: Consistent and clean error responses.
+- **Modular Project Structure**: Follows the MVC pattern for maintainability.
+- **MongoDB Atlas Integration**: Uses Mongoose for elegant object data modeling.
 
-2. Install dependencies:
-npm install
+## Tech Stack
 
-3. Configure environment variables:
-PORT=.....
-MONGODB_URI=.....
-JWT_SECRET=......
-
-4. Run the server (Dev mode):
-npm run dev
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB (with MongoDB Atlas)
+- **ODM**: Mongoose
+- **Authentication**: JWT (jsonwebtoken)
+- **Validation**: express-validator
+- **Environment Variables**: dotenv
 
 
-# Author
-Bharat – CSE Student, IIT Patna
-Internship Project – Contact Management System Backend
-Connect on LinkedIn
+
+
+
+## 🚀 Setup and Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/bharatIitp/contact-manager-backend.git
+    cd contact-manager-backend
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure Environment Variables**
+
+    Create a `.env` file in the root directory and add the following variables. Use `.env.example` as a template.
+
+    ```env
+    PORT=5000
+    MONGO_URI=your_mongodb_atlas_connection_uri
+    JWT_SECRET=your_super_secret_jwt_key
+    NODE_ENV=development
+    ```
+
+4.  **Run the server**
+
+    The server will start in development mode with `nodemon`, which automatically restarts on file changes.
+
+    ```bash
+    npm run dev
+    ```
+
+##  Author
+
+- **Bharat**
+- B.sc CS @ IIT Patna
+- Backend Developer Intern
+- **Connect on LinkedIn**
+
+## 🏁 Future Enhancements
+
+- [ ] CSV export of contacts
+- [ ] Docker support for containerization
+- [ ] Swagger/OpenAPI for interactive API documentation
+- [ ] Cloud deployment scripts (e.g., for Render/EC2)

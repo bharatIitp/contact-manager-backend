@@ -75,12 +75,22 @@ export const getContactById = async (req, res, next) => {
 // POST create contact
 export const createContact = async (req, res, next) => {
   try {
-    const contact = await Contact.create(req.body);
+    const { name, email, phone, label } = req.body;
+
+    const contact = await Contact.create({
+      name,
+      email,
+      phone,
+      label,
+      user: req.user._id,
+    });
+
     res.status(201).json({ success: true, data: contact });
   } catch (err) {
     next(err);
   }
 };
+
 
 // PUT update contact
 export const updateContact = async (req, res, next) => {
