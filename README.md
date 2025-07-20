@@ -61,12 +61,6 @@ A Node.js + Express RESTful API for managing personal contacts with secure user 
     ```
 
 
-## Sample API Request
-
-![Postman Screenshot](./assets/Screenshot (59).png)
-
-
-
 
 ##  Author
 
