@@ -1,9 +1,5 @@
 # Contact Manager Backend API
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-blue.svg)
-![Express.js](https://img.shields.io/badge/Express.js-5.x-orange.svg)
-
 A Node.js + Express RESTful API for managing personal contacts with secure user authentication. Built as part of an internship project with production-quality architecture, validations, and user access control.
 
 ## Features
@@ -32,7 +28,7 @@ A Node.js + Express RESTful API for managing personal contacts with secure user 
 
 
 
-## 🚀 Setup and Installation
+## Setup and Installation
 
 1.  **Clone the repository**
     ```bash
@@ -69,11 +65,9 @@ A Node.js + Express RESTful API for managing personal contacts with secure user 
 - **Bharat**
 - B.sc CS @ IIT Patna
 - Backend Developer Intern
-- **Connect on LinkedIn**
 
-## 🏁 Future Enhancements
 
-- [ ] CSV export of contacts
+## Future Enhancements
 - [ ] Docker support for containerization
 - [ ] Swagger/OpenAPI for interactive API documentation
 - [ ] Cloud deployment scripts (e.g., for Render/EC2)
