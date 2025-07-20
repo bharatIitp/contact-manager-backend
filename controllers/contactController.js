@@ -6,13 +6,51 @@ const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 
 // GET all contacts
 export const getAllContacts = async (req, res, next) => {
+  
+
+
   try {
-    const contacts = await Contact.find();
-    res.status(200).json({ success: true, data: contacts });
+    const userId = req.user._id;
+    const { search = "" , page = 1 , limit= 10} = req.query;
+
+    const query = {
+      user: userId,
+      $or: [
+
+
+        { name: {$regex: search , $options: "i"}},
+        { email: {$regex: search , $options: "i"}},
+        { label: {$regex: search , $options: "i"}},
+
+      ],
+    };
+
+    const skip = (page - 1)*limit;
+
+    const contacts = await Contact.find(query)
+      .skip(skip)
+      .limit(Number(limit))
+      .sort({ createdAt: -1 });
+
+    const total = await Contact.countDocuments(query);
+
+    res.json({
+      success: true,
+      data: contacts,
+      pagination: {
+        total,
+        page: Number(page),
+        limit: Number(limit),
+        totalPages: Math.ceil(total / limit),
+      },
+    });
   } catch (err) {
-    next(err); // Forward to error handler
+    next(err);
   }
-};
+  }
+
+
+
 
 // GET contact by ID
 export const getContactById = async (req, res, next) => {
